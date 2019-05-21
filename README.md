@@ -4,5 +4,5 @@ Based on Tim Corey's [C# Application From Start To Finish](https://www.youtube.c
 
 ---
 
-Created with WPF.
+Created with WPF and Caliburn.Micro for enabling MVVM.
 Dapper as ORM and SQLite for database.
