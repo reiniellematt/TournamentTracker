@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="TournamentTrackerUI.Views.CreateTeamView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TournamentTrackerUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="36" Content="Create Team"/>
+ 
+        <!-- Team Name -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Team Name:" Margin="0,24,0,0"/>
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" MinWidth="280"/>
+        
+        <!-- Team Members -->
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Select Team Members:" Margin="0,24,0,0"/>
+        <ComboBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Add Member" Margin="0,8,0,0" Padding="12,0"/>
+ 
+        <!-- Add New Member -->
+        <Rectangle Grid.Row="6" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3" Stroke="#999" MinWidth="300" Margin="0,24,0,0"/>
+        <Label Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" Background="White" FontSize="12" Content="Add New Member" Margin="0,8,180,0"/>
+
+        <!-- (New Member) First Name -->
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,24,0,0">
+            <Label Content="First Name:  "/>
+            <TextBox MinWidth="180"/>
+        </StackPanel>
+        
+        <!-- (New Member) Last Name -->
+        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
+            <Label Content="Last Name:  "/>
+            <TextBox MinWidth="180"/>
+        </StackPanel>
+
+        <!-- (New Member) Email Address -->
+        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
+            <Label Content="Email Add.:  "/>
+            <TextBox MinWidth="180"/>
+        </StackPanel>
+        
+        <!-- (New Member) Contact No. -->
+        <StackPanel Orientation="Horizontal" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
+            <Label Content="Contact No.:"/>
+            <TextBox MinWidth="180"/>
+        </StackPanel>
+        
+        <!-- New Member Create Button -->
+        <Button Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Create Member" Margin="0,12,0,8" Padding="12,0"/>
+
+        <!-- Team Members -->
+        <Label Grid.Row="1" Grid.Column="3" Content="Team Members / Players" Margin="120,24,0,0"/>
+        <Button Grid.Row="1" Grid.Column="5" HorizontalAlignment="Right" Content="remove" Margin="0,24,0,0" Padding="24,0"/>
+        <ListBox Grid.Row="2" Grid.Column="3" Grid.RowSpan="10" Grid.ColumnSpan="3" MinWidth="780" Margin="120,8,0,0"/>
+
+        <!-- Create Team -->
+        <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="11" HorizontalAlignment="Center" FontWeight="Bold" Content="Create Team" Margin="0,62,0,0" Padding="36,2"/>
+
+        <Button Grid.Row="12" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Content="Cancel" Padding="24,2"/>
+    </Grid>
+</UserControl>

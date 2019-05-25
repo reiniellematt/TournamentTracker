@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="TournamentTrackerUI.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TournamentTrackerUI.Views"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- HEADER -->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" FontSize="56" FontWeight="Thin" Content="Tournament Tracker" />
+        
+        <!-- Existing Tournaments ListBox -->
+        <Label Grid.Row="1" Grid.Column="0" FontSize="24" Content="Load Existing Tournaments"/>
+        <ListBox Grid.Row="2" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="2" MinWidth="480"/>
+        
+        <!-- Buttons -->
+        <Button Grid.Row="2" Grid.Column="2" MinWidth="200" MinHeight="48" FontSize="24" Content="Load" Margin="8,0,0,0"/>
+
+        <Button Grid.Row="3" Grid.Column="2" MinWidth="200" MinHeight="48" FontSize="24" Content="CreateNew" Margin="8,18,0,0"/>        
+    </Grid>
+</UserControl>

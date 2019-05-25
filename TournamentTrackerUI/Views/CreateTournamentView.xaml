@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="TournamentTrackerUI.Views.CreateTournamentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TournamentTrackerUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontWeight="Light" FontSize="48" Content="Create Tournament"/>
+        
+        <!-- Tournament Name -->
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Tournament Name" Margin="0,24,0,0"/>
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+        
+        <!-- Entry Fee -->
+        <Label Grid.Row="3" Grid.Column="0" Content="Entry Fee" Margin="0,24,0,0"/>
+        <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="120,24,0,0"/>
+        
+        <!-- Select Team -->
+        <Label Grid.Row="4" Grid.Column="0" Content="Select Team" Margin="0,24,0,0"/>
+        <Button Grid.Row="4" Grid.Column="1" MaxWidth="154" MinHeight="36" MaxHeight="40" Content="create" Margin="0,24,0,0"/>
+        <ComboBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,8,0,0"/>
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" MinWidth="170" Content="Add Team" Margin="0,8,0,0"/>
+
+        <!-- Select Prize -->
+        <Label Grid.Row="7" Grid.Column="0" Content="Select Prize" Margin="0,24,0,0"/>
+        <Button Grid.Row="7" Grid.Column="1" MaxWidth="154" MinHeight="36" MaxHeight="40" Content="create" Margin="0,24,0,0"/>
+        <ComboBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,8,0,0"/>
+        <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" MinWidth="170" Content="Add Prize" Margin="0,8,0,0"/>
+        
+        
+        <!-- Teams ListBox -->
+        <Label Grid.Row="1" Grid.Column="3" Content="Teams" Margin="180,24,0,0"/>
+        <Button Grid.Row="1" Grid.Column="5" HorizontalAlignment="Right" MinWidth="150" Content="remove" Margin="0,24,0,0"/>
+        <ListBox Grid.Row="2" Grid.Column="3" Grid.RowSpan="5" Grid.ColumnSpan="3" Margin="180,8,0,0"/>
+
+        <!-- Prizes ListBox -->
+        <Label Grid.Row="7" Grid.Column="4" Content="Teams" Margin="0,24,0,0"/>
+        <Button Grid.Row="7" Grid.Column="5" HorizontalAlignment="Right" MinWidth="150" Content="remove" Margin="0,24,0,0"/>
+        <ComboBox Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="3" Margin="0,8,0,0"/>
+        
+        <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center" MinWidth="300" MinHeight="50" FontWeight="Bold" Content="Create Tournament" Margin="0,48,0,0"/>
+        
+        <!-- Cancel button -->
+        <Button Grid.Row="10" Grid.Column="4" Foreground="Black" Content="Cancel" VerticalAlignment="Bottom" Margin="200,0,0,0" Padding="24,2"/>
+    </Grid>
+</UserControl>
