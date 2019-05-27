@@ -48,44 +48,44 @@
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Add Member" Margin="0,8,0,0" Padding="12,0"/>
  
         <!-- Add New Member -->
-        <Rectangle Grid.Row="6" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3" Stroke="#999" MinWidth="300" Margin="0,24,0,0"/>
+        <Rectangle Grid.Row="6" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3" Stroke="#999" MinWidth="360" Margin="0,24,0,0"/>
         <Label Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" Background="White" FontSize="12" Content="Add New Member" Margin="0,8,180,0"/>
 
         <!-- (New Member) First Name -->
         <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,24,0,0">
             <Label Content="First Name:  "/>
-            <TextBox MinWidth="180"/>
+            <TextBox x:Name="FirstName" MinWidth="240" VerticalAlignment="Bottom" FontSize="16"/>
         </StackPanel>
         
         <!-- (New Member) Last Name -->
         <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
             <Label Content="Last Name:  "/>
-            <TextBox MinWidth="180"/>
+            <TextBox x:Name="LastName" MinWidth="240" FontSize="16"/>
         </StackPanel>
 
         <!-- (New Member) Email Address -->
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
             <Label Content="Email Add.:  "/>
-            <TextBox MinWidth="180"/>
+            <TextBox x:Name="EmailAddress" MinWidth="240" FontSize="16"/>
         </StackPanel>
         
         <!-- (New Member) Contact No. -->
         <StackPanel Orientation="Horizontal" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,4,0,0">
             <Label Content="Contact No.:"/>
-            <TextBox MinWidth="180"/>
+            <TextBox x:Name="ContactNumber" MinWidth="240" FontSize="16"/>
         </StackPanel>
         
         <!-- New Member Create Button -->
-        <Button Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Create Member" Margin="0,12,0,8" Padding="12,0"/>
+        <Button x:Name="CreateMember" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Create Member" Margin="0,12,0,8" Padding="12,0"/>
 
         <!-- Team Members -->
         <Label Grid.Row="1" Grid.Column="3" Content="Team Members / Players" Margin="120,24,0,0"/>
         <Button Grid.Row="1" Grid.Column="5" HorizontalAlignment="Right" Content="remove" Margin="0,24,0,0" Padding="24,0"/>
-        <ListBox Grid.Row="2" Grid.Column="3" Grid.RowSpan="10" Grid.ColumnSpan="3" MinWidth="780" Margin="120,8,0,0"/>
+        <ListBox x:Name="TeamMembers" Grid.Row="2" Grid.Column="3" Grid.RowSpan="10" Grid.ColumnSpan="3" MinWidth="720" FontSize="18" DisplayMemberPath="DisplayName" Margin="120,8,0,0"/>
 
         <!-- Create Team -->
         <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="11" HorizontalAlignment="Center" FontWeight="Bold" Content="Create Team" Margin="0,62,0,0" Padding="36,2"/>
 
-        <Button Grid.Row="12" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" Content="Cancel" Padding="24,2"/>
+        <Button Grid.Row="12" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="Black" FontSize="16" Content="Cancel" Padding="24,2"/>
     </Grid>
 </UserControl>

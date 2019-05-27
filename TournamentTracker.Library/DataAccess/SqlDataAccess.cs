@@ -11,35 +11,32 @@ namespace TournamentTracker.Library.DataAccess
     public class SqlDataAccess : IDataAccess
     {
         private readonly string _cnnString = ConfigurationManager.ConnectionStrings["TrackerData"].ConnectionString;
-        public Task<int> CreatePerson(Person person)
+        public async Task<int> CreatePerson(Person person)
         {
-            throw new System.NotImplementedException();
+            string commandString = "INSERT INTO Person(FirstName, LastName, EmailAddress, ContactNumber) VALUES (@FirstName, @LastName, @EmailAddress, @ContactNumber);SELECT last_insert_rowid();";
+
+            using (IDbConnection cnn = new SQLiteConnection(_cnnString))
+            {
+                var id = await cnn.QueryAsync<int>(commandString, person);
+                return id.FirstOrDefault();
+            }
         }
 
         public async Task<int> CreatePrize(Prize prize, bool isPrizeAmount)
         {
-            var p = new DynamicParameters();
-            p.Add("@PlaceName", prize.PlaceName);
-            p.Add("@PlaceNumber", prize.PlaceNumber);
-            p.Add("@PrizeAmount", prize.PrizeAmount);
-
             string commandString = string.Empty;
             if (isPrizeAmount)
             {
-                p.Add("@PrizeAmount", prize.PrizeAmount);
-
                 commandString = "INSERT INTO Prize(PlaceName, PlaceNumber, PrizeAmount) VALUES (@PlaceName, @PlaceNumber, @PrizeAmount); SELECT last_insert_rowid();";
             }
             else
             {
-                p.Add("@PrizePercentage", prize.PrizePercentage);
-
-                commandString = "INSERT INTO Prize(PlaceName, PlaceNumber, PrizePercentage) VALUES (@PlaceName, @PlaceNumber @PrizePercentage); SELECT last_insert_rowid();";
+                commandString = "INSERT INTO Prize(PlaceName, PlaceNumber, PrizePercentage) VALUES (@PlaceName, @PlaceNumber, @PrizePercentage); SELECT last_insert_rowid();";
             }
 
             using (IDbConnection cnn = new SQLiteConnection(_cnnString))
             {
-                var id = await cnn.QueryAsync<int>(commandString, p);
+                var id = await cnn.QueryAsync<int>(commandString, prize);
 
                 return id.FirstOrDefault();
             }

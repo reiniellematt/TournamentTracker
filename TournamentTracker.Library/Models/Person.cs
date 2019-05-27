@@ -11,5 +11,10 @@
         public string EmailAddress { get; set; }
 
         public string ContactNumber { get; set; }
+
+        public string DisplayName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }
     }
 }
