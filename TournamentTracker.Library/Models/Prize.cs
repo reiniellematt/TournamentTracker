@@ -6,7 +6,7 @@
 
         public string PlaceName { get; set; }
 
-        public string PlaceNumber { get; set; }
+        public int PlaceNumber { get; set; }
 
         public decimal? PrizeAmount { get; set; }
 

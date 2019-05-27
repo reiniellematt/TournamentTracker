@@ -8,6 +8,7 @@ namespace TournamentTrackerUI.ViewModels
     public class CreatePrizeViewModel : Screen
     {
         private readonly IDataAccess _dataAccess;
+        private readonly IEventAggregator _eventAggregator;
 
         private string _placeName = string.Empty;
         private string _placeNumber = "0";
@@ -78,14 +79,25 @@ namespace TournamentTrackerUI.ViewModels
             }
         }
 
-        public CreatePrizeViewModel(IDataAccess dataAccess)
+        public CreatePrizeViewModel(IDataAccess dataAccess, IEventAggregator eventAggregator)
         {
             _dataAccess = dataAccess;
+            _eventAggregator = eventAggregator;
         }
 
-        public async Task CreatePrize()
+        public async void CreatePrize()
         {
-            Prize prize = new Prize();
+            Prize prize = new Prize
+            {
+                PlaceName = PlaceName,
+                PlaceNumber = int.Parse(PlaceNumber),
+                PrizeAmount = decimal.Parse(PrizeAmount),
+                PrizePercentage = int.Parse(PrizePercentage)
+            };
+
+            prize.Id = await _dataAccess.CreatePrize(prize, IsPrizeAmount);
+            _eventAggregator.BeginPublishOnUIThread(prize);
+            TryClose();
         }
 
         public bool CanCreatePrize

@@ -5,12 +5,12 @@ namespace TournamentTracker.Library.DataAccess
 {
     public interface IDataAccess
     {
-        Task CreatePrize(Prize prize);
+        Task<int> CreatePrize(Prize prize, bool isPrizeAmount);
 
-        Task CreatePerson(Person person);
+        Task<int> CreatePerson(Person person);
 
-        Task CreateTeam(Team team);
+        Task<int> CreateTeam(Team team);
 
-        Task CreateTournament(Tournament tournament);
+        Task<int> CreateTournament(Tournament tournament);
     }
 }
