@@ -8,6 +8,8 @@ namespace TournamentTracker.Library.Models
 
         public string TournamentName { get; set; }
 
+        public decimal EntryFee { get; set; }
+
         public IEnumerable<Team> EnteredTeams { get; set; }
 
         public IEnumerable<IEnumerable<Matchup>> Rounds { get; set; }

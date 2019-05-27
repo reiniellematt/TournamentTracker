@@ -17,6 +17,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -25,24 +26,27 @@
             
             <!-- Place Number -->
             <Label Grid.Row="0" Grid.Column="0" FontSize="24" Content="Place Number:"/>
-            <TextBox Grid.Row="0" Grid.Column="1" MinWidth="225"/>
+            <TextBox x:Name="PlaceNumber" Grid.Row="0" Grid.Column="1" MinWidth="225"/>
 
             <!-- Place Name -->
             <Label Grid.Row="1" Grid.Column="0" FontSize="24" Content="Place Name:" Margin="0,12,0,0"/>
-            <TextBox Grid.Row="1" Grid.Column="1" MinWidth="225" Margin="0,12,0,0"/>
-            
+            <TextBox x:Name="PlaceName" Grid.Row="1" Grid.Column="1" MinWidth="225" Margin="0,12,0,0"/>
+
+            <RadioButton x:Name="IsPrizeAmount" Grid.Row="2" Grid.Column="0" Content="Prize Amount" Margin="0,24,0,0"/>
+            <RadioButton x:Name="IsPrizePercentage" Grid.Row="2" Grid.Column="1" Content="Prize Percentage" Margin="0,24,0,0"/>
+
             <!-- Prize Amount -->
-            <Label Grid.Row="2" Grid.Column="0" FontSize="24" Content="Prize Amount:" Margin="0,24,0,0"/>
-            <TextBox Grid.Row="2" Grid.Column="1" MinWidth="225" Margin="0,24,0,0"/>
+            <Label Grid.Row="3" Grid.Column="0" IsEnabled="{Binding Path=IsPrizeAmount}" FontSize="24" Content="Prize Amount:" Margin="0,12,0,0"/>
+            <TextBox x:Name="PrizeAmount" Grid.Row="3" Grid.Column="1" IsEnabled="{Binding Path=IsPrizeAmount}" MinWidth="225" Margin="0,12,0,0"/>
 
             <!-- or -->
-            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="20" HorizontalAlignment="Center" FontSize="24" Content="- or -" Margin="0,12,0,0"/>
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="20" HorizontalAlignment="Center" FontSize="24" Content="- or -" Margin="0,12,0,0"/>
 
             <!-- Prize Percentage -->
-            <Label Grid.Row="4" Grid.Column="0" FontSize="24" Content="Prize Percentage:" Margin="0,12,0,0"/>
-            <TextBox Grid.Row="4" Grid.Column="1" MinWidth="225" Margin="0,12,0,0"/>
+            <Label Grid.Row="5" Grid.Column="0" IsEnabled="{Binding Path=IsPrizePercentage}" FontSize="24" Content="Prize Percentage:" Margin="0,12,0,0"/>
+            <TextBox x:Name="PrizePercentage" Grid.Row="5" Grid.Column="1" IsEnabled="{Binding Path=IsPrizePercentage}" MinWidth="225" Margin="0,12,0,0"/>
         </Grid>
 
-        <Button HorizontalAlignment="Center" MinWidth="154" FontSize="24" Content="Create" Margin="0,56,0,0"/>
+        <Button x:Name="CreatePrize" HorizontalAlignment="Center" MinWidth="154" FontSize="24" Content="Create" Margin="0,56,0,0"/>
     </StackPanel>
 </Window>

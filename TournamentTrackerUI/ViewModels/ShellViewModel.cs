@@ -4,7 +4,7 @@ namespace TournamentTrackerUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        public ShellViewModel(TournamentViewModel viewModel)
+        public ShellViewModel(DashboardViewModel viewModel)
         {
             ActivateItem(viewModel);
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using TournamentTracker.Library.DataAccess;
 using TournamentTrackerUI.ViewModels;
 
 namespace TournamentTrackerUI
@@ -20,7 +21,8 @@ namespace TournamentTrackerUI
         {
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IDataAccess, SqlDataAccess>();
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
@@ -32,7 +34,7 @@ namespace TournamentTrackerUI
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<ShellViewModel>();
+            DisplayRootViewFor<CreatePrizeViewModel>();
         }
 
         protected override object GetInstance(Type service, string key)
