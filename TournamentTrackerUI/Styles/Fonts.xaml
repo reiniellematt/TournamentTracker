@@ -11,8 +11,8 @@
         <Setter Property="FontSize" Value="18"/>
     </Style>
 
-    <Style x:Key="MainComboBoxStyle" TargetType="{x:Type ComboBox}">
-        <Setter Property="FontSize" Value="18"/>
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="FontSize" Value="16"/>
     </Style>
 
     <Style x:Key="MainButtonStyle" TargetType="{x:Type Button}">

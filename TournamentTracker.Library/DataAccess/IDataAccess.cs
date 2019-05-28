@@ -1,16 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using TournamentTracker.Library.Models;
 
 namespace TournamentTracker.Library.DataAccess
 {
     public interface IDataAccess
     {
-        Task<int> CreatePrize(Prize prize, bool isPrizeAmount);
+        Task<IEnumerable<Person>> GetPeople();
 
-        Task<int> CreatePerson(Person person);
+        Task CreatePrize(Prize prize, bool isPrizeAmount);
 
-        Task<int> CreateTeam(Team team);
+        Task CreatePerson(Person person);
 
-        Task<int> CreateTournament(Tournament tournament);
+        Task CreateTeam(Team team);
+
+        Task CreateTournament(Tournament tournament);
     }
 }

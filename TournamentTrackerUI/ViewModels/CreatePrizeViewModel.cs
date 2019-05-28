@@ -95,7 +95,7 @@ namespace TournamentTrackerUI.ViewModels
                 PrizePercentage = int.Parse(PrizePercentage)
             };
 
-            prize.Id = await _dataAccess.CreatePrize(prize, IsPrizeAmount);
+            await _dataAccess.CreatePrize(prize, IsPrizeAmount);
             _eventAggregator.BeginPublishOnUIThread(prize);
             TryClose();
         }
